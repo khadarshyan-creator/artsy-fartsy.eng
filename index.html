@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--rasp:#c8175d;--bg:#f7f7f6;--ink:#161616;--mute:#727272;--line:#cfcfcd;color-scheme:light}
+:root{--purple:#7b2fbe;--rasp:#c8175d;--bg:#f7f7f6;--ink:#161616;--mute:#727272;--line:#cfcfcd;color-scheme:light}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.6 'Outfit',system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -200,7 +200,7 @@ function list(s){const a=items(s);return a.length?`<div class="list">${a.map((i,
 const MQ=()=>{const s='English for the artsy-fartsy \u2733 '.repeat(6);return `<div class="mq" aria-hidden="true"><div>${s}${s}</div></div>`};
 const PAT=()=>`<div class="pat" aria-hidden="true">${'ENGLISH \u2733 ARTSY \u2733 FARTSY \u2733 '.repeat(60)}</div>`;
 function home(){
- return `<section class="hero"><div><h1 class="big">English for the artsy-fartsy</h1><p>${HERO_LINE}</p></div><figure class="duo"><img src="${PHOTO}" alt="Portrait of the teacher in a garden"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure></section>
+ return `<section class="hero"><div><h1 class="big" style="color:var(--purple)">English for the artsy-fartsy</h1><p>${HERO_LINE}</p></div><figure><img src="${PHOTO}" alt="Portrait of the teacher in a garden"></figure></section>
  ${MQ()}
  <p class="label" style="margin-top:clamp(40px,6vw,72px)">Departments</p>
  <div class="list">${row('01','All things English','Language education for professionals and culturally curious people.','#english')}${row('02','DELF Diaries','Tactics for ESL students, tried on myself in French.','#delf')}</div>
