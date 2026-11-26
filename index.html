@@ -213,11 +213,12 @@ function home(){
 function english(){
  return `${back('#','Home')}<h1 class="big">All things English</h1><p class="lead">${INTRO}</p>
  <div class="grid">${SECTIONS.map(s=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><span>Open ↗</span></a>`).join('')}</div>`}
+const gram=()=>`<section class="gram"><p class="label">Grammar lesson materials</p><h2 class="big">Grammar focus</h2>${items('grammar').length?`<div class="list">${items('grammar').map((i,k)=>row(pad(k+1,2),i.title,[i.meta,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[Materials coming soon]</div>`}</section>`;
 function section(id){
  if(id==='about')return about();
  const s=SECTIONS.find(x=>x.id===id),d=DELF_SECS.find(x=>x.id===id),x=s||d;if(!x)return home();
  const b=d?back('#delf','DELF Diaries'):back('#english','All things English');
- return `${b}<h1 class="big">${x.t}</h1><p class="lead">${x.d}</p>${list(id)}`}
+ return `${b}<h1 class="big">${x.t}</h1><p class="lead">${x.d}</p>${list(id)}${id==='lessons'?gram():''}`}
 function about(){
  const ED=['Art History: University of St Andrews & St Petersburg State University (2021)','Cambridge CELTA: International House, Budapest (2023)','IELTS 8.0 (2022), with 9.0 in Listening & Reading'];
  const EX=['Private ESL tutor, January 2019 to present','ESL and Art & Design teacher, Projector School, Tbilisi','Cultural mediator, GES-2 House of Culture, Moscow'];
@@ -240,8 +241,7 @@ function delf(){
  <figure class="dphoto"><img src="${PHOTO3}" alt="Night photograph of the facade of Hotel des Arts in Paris"></figure>
  <section class="band"><div><span class="num">${left}</span><span class="u">days to go</span></div><div class="r"><small>Target date</small><div class="date">${dt}</div></div></section>
  <section class="log"><p class="label">Daily log</p>${log.length?`<div class="list">${log.map((i,k)=>row('J'+pad(k+1,2),i.title,[i.meta,i.tactic,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[No entries yet.]</div>`}</section>
- <div class="grid">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>
- <section class="gram"><p class="label">Grammar lesson materials</p><h2 class="big">Grammar focus</h2>${items('grammar').length?`<div class="list">${items('grammar').map((i,k)=>row(pad(k+1,2),i.title,[i.meta,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[Materials coming soon]</div>`}</section>`}
+ <div class="grid">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>`}
 function item(id){
  const i=ITEMS.find(x=>x.id===id);if(!i)return home();
  const p=i.sec==='desk'?['#','Home']:i.sec==='log'?['#delf','DELF Diaries']:DELF_SECS.some(s=>s.id===i.sec)?['#s-'+i.sec,DELF_SECS.find(s=>s.id===i.sec).t]:['#s-'+i.sec,(SECTIONS.find(s=>s.id===i.sec)||{}).t];
