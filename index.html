@@ -212,7 +212,7 @@ function about(){
  const AR=['Art history, video art and sculpture','Cinema','Teaching English through art','Languages','Music and DJing'];
  const col=(h,a)=>`<div><h2>${h}</h2><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
  return `${back('#english','All things English')}<div class="about"><p class="label">Short biography</p>
- <p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in English for creatives, and is currently accepting new students.</p>
+ <p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students.</p>
  <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}${col('Areas of interest',AR)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
