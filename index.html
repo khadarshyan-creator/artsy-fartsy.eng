@@ -35,7 +35,7 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 .mq div{display:inline-block;padding:.12em 0;color:var(--rasp);font:clamp(30px,4.5vw,60px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;animation:mq 40s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.mq div{animation:none}}
-.cta{display:inline-block;margin-top:32px;padding:16px 26px;background:var(--rasp);color:#fff;font-size:17px}.cta:hover{background:#fff;color:var(--rasp)}.price{margin:18px 0 0;font:clamp(28px,3vw,40px)/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.03em}
+.cta{display:inline-block;margin-top:32px;padding:16px 26px;background:var(--rasp);color:#fff;font-size:17px}.cta:hover{background:#fff;color:var(--rasp)}.price{margin:22px 0 0}.price p{margin:0;font:clamp(28px,3vw,40px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.03em}.price .pm,.price .pn{font:300 16px/1.6 'Outfit',system-ui,sans-serif;letter-spacing:0;opacity:.8}.price .pm{margin-bottom:6px}.price .pn{margin-top:10px}
 .pic{margin:32px 0 0;max-width:62ch}.pic img{width:100%;height:auto;display:block;filter:grayscale(1)}.pic figcaption{font-size:.8rem;color:var(--mute);margin-top:8px}
 .lead{max-width:52ch;color:var(--mute);margin:20px 0 56px}
 .label{font-size:14px;color:var(--mute);margin:0 0 12px}
@@ -113,6 +113,7 @@ footer{padding:64px 0 40px;font-size:15px;color:var(--mute)}
 </head>
 <body>
 <div class="w">
+<div id="mqtop"></div>
 <header><a href="#s-about">Info</a></header>
 <main id="app"></main>
 <footer>© Daria Khadyshyan</footer>
@@ -195,7 +196,6 @@ const MQ=()=>{const s='English for the artsy-fartsy \u2733 '.repeat(6);return `<
 const PAT=()=>`<div class="pat" aria-hidden="true">${'ENGLISH \u2733 ARTSY \u2733 FARTSY \u2733 '.repeat(60)}</div>`;
 function home(){
  return `<section class="hero"><div><h1 class="big" style="color:var(--purple)">English for the artsy-fartsy</h1><p>${HERO_LINE}</p></div><figure><img src="${PHOTO}" alt="Portrait of the teacher in a garden"></figure></section>
- ${MQ()}
  <p class="label" style="margin-top:clamp(40px,6vw,72px)">Departments</p>
  <div class="list">${row('01','All things English','Language education for professionals and culturally curious people.','#english')}${row('02','DELF Diaries','Tactics for ESL students, tried on myself in French.','#delf')}</div>
  <section class="desk"><div><p class="label">Anthropological research all day long</p><h2 class="big">On my desk</h2><figure class="abpic" style="margin-top:32px;max-width:340px"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure></div><div>${DESK.map((d,k)=>`<${d.id?'a href="#i-'+d.id+'"':'div'} class="row"><span class="n">${pad(k+1,2)}</span><span class="t" style="font-size:clamp(26px,3vw,40px)">${d.t}</span></${d.id?'a':'div'}>`).join('')}</div></section>`}
@@ -217,8 +217,7 @@ function about(){
  <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
- ${MQ()}
- <section class="contact">${PAT()}<div><p class="label">Contact / social / paperwork</p><h2 class="big">Let’s talk</h2><p class="sub">about something</p><a class="cta" href="mailto:khadarshyn@gmail.com?subject=Lesson%20request&body=Hello%20Daria%2C%0A%0AI%27d%20like%20to%20book%20English%20lessons.%0A%0AFormat%20%28individual%20/%20group%29%3A%0AMy%20level%20of%20English%3A%0AMy%20field%20or%20profession%3A%0AMy%20goals%3A%0APreferred%20days%20and%20times%3A%0A">Apply for individual and group lessons <span>\u2197</span></a><p class="price">60 min / \u20ac35 / 3,500 \u20bd</p></div>
+ <section class="contact">${PAT()}<div><p class="label">Contact / social / paperwork</p><h2 class="big">Let’s talk</h2><p class="sub">about something</p><a class="cta" href="mailto:khadarshyn@gmail.com?subject=Lesson%20request&body=Hello%20Daria%2C%0A%0AI%27d%20like%20to%20book%20English%20lessons.%0A%0AFormat%20%28individual%20/%20group%29%3A%0AMy%20level%20of%20English%3A%0AMy%20field%20or%20profession%3A%0AMy%20goals%3A%0APreferred%20days%20and%20times%3A%0A">Apply for individual and group lessons <span>\u2197</span></a><div class="price"><p class="pm">60 min</p><p>Individual / \u20ac35 / 3,500 \u20bd</p><p>Group / \u20ac20 / 2,500 \u20bd</p><p class="pn">* plus speaking club / \u20ac15</p></div></div>
  <ul><li><a href="mailto:khadarshyn@gmail.com">Email: khadarshyn@gmail.com <span>\u2197</span></a></li><li><a href="https://t.me/donnnakebab" target="_blank" rel="noopener">Telegram: @donnnakebab <span>\u2197</span></a></li><li><a href="https://t.me/very_romantic_collection" target="_blank" rel="noopener">Personal channel: Very Romantic Collection <span>\u2197</span></a></li><li><a href="https://www.threads.com/@iam_donnakebab" target="_blank" rel="noopener">ESL channel: Threads @iam_donnakebab <span>\u2197</span></a></li><li><a href="https://www.instagram.com/iam_donnakebab/" target="_blank" rel="noopener">Instagram: @iam_donnakebab <span>\u2197</span></a></li><li><a href="https://substack.com/@anotherfunnystory" target="_blank" rel="noopener">Substack: Another funny story <span>\u2197</span></a></li></ul></section></div>`}
 function delf(){
  const now=new Date(),t0=new Date(DELF_START+'T00:00:00'),t1=new Date(DELF_TARGET+'T00:00:00');
@@ -239,6 +238,7 @@ function route(){
  $.innerHTML=h==='english'?english():h==='delf'?delf():h.startsWith('s-')?section(h.slice(2)):h.startsWith('i-')?item(h.slice(2)):home();
  window.scrollTo(0,0);
 }
+document.getElementById('mqtop').innerHTML=MQ();
 addEventListener('hashchange',route);route();
 </script>
 </body>
