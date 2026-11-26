@@ -204,7 +204,7 @@ function home(){
  ${MQ()}
  <p class="label" style="margin-top:clamp(40px,6vw,72px)">Departments</p>
  <div class="list">${row('01','All things English','Language education for professionals and culturally curious people.','#english')}${row('02','DELF Diaries','Tactics for ESL students, tried on myself in French.','#delf')}</div>
- <section class="desk"><div><p class="label">Currently investigating</p><h2 class="big">On my desk</h2></div><div>${DESK.map((d,k)=>`<${d.id?'a href="#i-'+d.id+'"':'div'} class="row"><span class="n">${pad(k+1,2)}</span><span class="t" style="font-size:clamp(26px,3vw,40px)">${d.t}</span></${d.id?'a':'div'}>`).join('')}</div></section>`}
+ <section class="desk"><div><p class="label">Anthropological research all day long</p><h2 class="big">On my desk</h2><figure class="abpic" style="margin-top:32px;max-width:340px"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure></div><div>${DESK.map((d,k)=>`<${d.id?'a href="#i-'+d.id+'"':'div'} class="row"><span class="n">${pad(k+1,2)}</span><span class="t" style="font-size:clamp(26px,3vw,40px)">${d.t}</span></${d.id?'a':'div'}>`).join('')}</div></section>`}
 function english(){
  return `${back('#','Home')}<h1 class="big">All things English</h1><p class="lead">${INTRO}</p>
  <div class="grid">${SECTIONS.map(s=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><span>Open ↗</span></a>`).join('')}</div>`}
