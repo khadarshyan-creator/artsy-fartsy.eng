@@ -38,6 +38,7 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 @media (prefers-reduced-motion:reduce){.mq div{animation:none}}
 .cta{display:inline-block;margin-top:32px;padding:16px 26px;background:var(--rasp);color:#fff;font-size:17px}.cta:hover{background:#fff;color:var(--rasp)}.price{margin:22px 0 0}.price p{margin:0;font:clamp(28px,3vw,40px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.03em}.price .pm,.price .pn{font:300 16px/1.6 'Outfit',system-ui,sans-serif;letter-spacing:0;opacity:.8}.price .pm{margin-bottom:6px}.price .pn{margin-top:10px}
 .dphoto{margin:clamp(40px,6vw,72px) 0 clamp(40px,6vw,72px)}.dphoto img{width:100%;height:clamp(240px,42vw,520px);object-fit:cover;display:block}
+.gram{margin-top:clamp(56px,8vw,110px)}.gram .big{margin:.1em 0 .5em}
 .pic{margin:32px 0 0;max-width:62ch}.pic img{width:100%;height:auto;display:block;filter:grayscale(1)}.pic figcaption{font-size:.8rem;color:var(--mute);margin-top:8px}
 .lead{max-width:52ch;color:var(--mute);margin:20px 0 56px}
 .label{font-size:14px;color:var(--mute);margin:0 0 12px}
@@ -239,7 +240,8 @@ function delf(){
  <figure class="dphoto"><img src="${PHOTO3}" alt="Night photograph of the facade of Hotel des Arts in Paris"></figure>
  <section class="band"><div><span class="num">${left}</span><span class="u">days to go</span></div><div class="r"><small>Target date</small><div class="date">${dt}</div></div></section>
  <section class="log"><p class="label">Daily log</p>${log.length?`<div class="list">${log.map((i,k)=>row('J'+pad(k+1,2),i.title,[i.meta,i.tactic,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[No entries yet.]</div>`}</section>
- <div class="grid">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>`}
+ <div class="grid">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>
+ <section class="gram"><p class="label">Grammar lesson materials</p><h2 class="big">Grammar focus</h2>${items('grammar').length?`<div class="list">${items('grammar').map((i,k)=>row(pad(k+1,2),i.title,[i.meta,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[Materials coming soon]</div>`}</section>`}
 function item(id){
  const i=ITEMS.find(x=>x.id===id);if(!i)return home();
  const p=i.sec==='desk'?['#','Home']:i.sec==='log'?['#delf','DELF Diaries']:DELF_SECS.some(s=>s.id===i.sec)?['#s-'+i.sec,DELF_SECS.find(s=>s.id===i.sec).t]:['#s-'+i.sec,(SECTIONS.find(s=>s.id===i.sec)||{}).t];
