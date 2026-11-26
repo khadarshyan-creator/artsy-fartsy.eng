@@ -225,7 +225,7 @@ function about(){
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
  ${MQ()}
  <section class="contact">${PAT()}<div><p class="label">Contact / social / paperwork</p><h2 class="big">Let’s talk</h2><p class="sub">about something</p></div>
- <ul><li><a href="#">[Email address] <span>↗</span></a></li><li><a href="#">[Social link 01] <span>↗</span></a></li><li><a href="#">[Social link 02] <span>↗</span></a></li><li><a href="#">[Download CV: file to come] <span>↓</span></a></li></ul></section></div>`}
+ <ul><li><a href="mailto:khadarshyn@gmail.com">Email: khadarshyn@gmail.com <span>\u2197</span></a></li><li><a href="https://t.me/donnnakebab" target="_blank" rel="noopener">Telegram: @donnnakebab <span>\u2197</span></a></li><li><a href="https://t.me/very_romantic_collection" target="_blank" rel="noopener">Personal channel: Very Romantic Collection <span>\u2197</span></a></li><li><a href="https://www.threads.com/@iam_donnakebab" target="_blank" rel="noopener">ESL channel: Threads @iam_donnakebab <span>\u2197</span></a></li></ul></section></div>`}
 function delf(){
  const now=new Date(),t0=new Date(DELF_START+'T00:00:00'),t1=new Date(DELF_TARGET+'T00:00:00');
  const left=Math.max(0,Math.ceil((t1-now)/DAY)),day=Math.max(1,Math.floor((now-t0)/DAY)+1);
