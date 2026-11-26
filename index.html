@@ -26,6 +26,7 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 .hero img{width:100%;height:auto;display:block;filter:grayscale(1)}
 .hero figure{margin:0}
 .hero .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px);align-items:end}
+.abpic{margin:48px 0 0;max-width:420px}.abpic img{width:100%;height:auto;display:block;filter:grayscale(1)}
 .pic{margin:32px 0 0;max-width:62ch}.pic img{width:100%;height:auto;display:block;filter:grayscale(1)}.pic figcaption{font-size:.8rem;color:var(--mute);margin-top:8px}
 .lead{max-width:52ch;color:var(--mute);margin:20px 0 56px}
 .label{font-size:14px;color:var(--mute);margin:0 0 12px}
@@ -213,6 +214,7 @@ function about(){
  const col=(h,a)=>`<div><h2>${h}</h2><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
  return `${back('#english','All things English')}<div class="about"><p class="label">Short biography</p>
  <p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students.</p>
+ <figure class="abpic"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure>
  <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}${col('Areas of interest',AR)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
