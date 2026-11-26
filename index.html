@@ -27,6 +27,13 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 .hero figure{margin:0}
 .hero .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px);align-items:end}
 .abpic{margin:48px 0 0;max-width:420px}.abpic img{width:100%;height:auto;display:block;filter:grayscale(1)}
+.bio{background:repeating-linear-gradient(to bottom,transparent 0 calc(1.12em - 1px),var(--line) calc(1.12em - 1px) 1.12em);border-left:1px solid var(--ink);padding-left:clamp(14px,2vw,28px)}
+.contact{position:relative;overflow:hidden}.contact>*:not(.pat){position:relative;z-index:1}
+.pat{position:absolute;inset:0;z-index:0;font:clamp(34px,5vw,64px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;color:var(--bg);opacity:.09;word-break:break-all;pointer-events:none;user-select:none}
+.mq{overflow:hidden;white-space:nowrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin:0 calc(-1*clamp(20px,4vw,56px))}
+.mq div{display:inline-block;padding:.12em 0;font:clamp(30px,4.5vw,60px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;animation:mq 40s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq div{animation:none}}
 .pic{margin:32px 0 0;max-width:62ch}.pic img{width:100%;height:auto;display:block;filter:grayscale(1)}.pic figcaption{font-size:.8rem;color:var(--mute);margin-top:8px}
 .lead{max-width:52ch;color:var(--mute);margin:20px 0 56px}
 .label{font-size:14px;color:var(--mute);margin:0 0 12px}
@@ -194,9 +201,12 @@ const back=(h,l)=>`<a class="back" href="${h}">← ${l}</a>`;
 const items=s=>ITEMS.filter(i=>i.sec===s);
 const pad=(n,l)=>String(n).padStart(l,'0');
 function list(s){const a=items(s);return a.length?`<div class="list">${a.map((i,k)=>row(pad(k+1,2),i.title,[i.meta,i.tactic,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[No entries yet. Add one to the content list.]</div>`}
+const MQ=()=>{const s='English for the artsy-fartsy \u2733 '.repeat(6);return `<div class="mq" aria-hidden="true"><div>${s}${s}</div></div>`};
+const PAT=()=>`<div class="pat" aria-hidden="true">${'ENGLISH \u2733 ARTSY \u2733 FARTSY \u2733 '.repeat(60)}</div>`;
 function home(){
  return `<section class="hero"><div><h1 class="big">English for the artsy-fartsy</h1><p>${HERO_LINE}</p></div><figure class="duo"><img src="${PHOTO}" alt="Portrait of the teacher in a garden"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure></section>
- <p class="label">Departments</p>
+ ${MQ()}
+ <p class="label" style="margin-top:clamp(40px,6vw,72px)">Departments</p>
  <div class="list">${row('01','All things English','Language education for professionals and culturally curious people.','#english')}${row('02','DELF Diaries','Tactics for ESL students, tried on myself in French.','#delf')}</div>
  <section class="desk"><div><p class="label">Currently investigating</p><h2 class="big">On my desk</h2></div><div>${DESK.map((d,k)=>`<${d.id?'a href="#i-'+d.id+'"':'div'} class="row"><span class="n">${pad(k+1,2)}</span><span class="t" style="font-size:clamp(26px,3vw,40px)">${d.t}</span></${d.id?'a':'div'}>`).join('')}</div></section>`}
 function english(){
@@ -218,7 +228,8 @@ function about(){
  <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}${col('Areas of interest',AR)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
- <section class="contact"><div><p class="label">Contact / social / paperwork</p><h2 class="big">Let’s talk</h2><p class="sub">about something</p></div>
+ ${MQ()}
+ <section class="contact">${PAT()}<div><p class="label">Contact / social / paperwork</p><h2 class="big">Let’s talk</h2><p class="sub">about something</p></div>
  <ul><li><a href="#">[Email address] <span>↗</span></a></li><li><a href="#">[Social link 01] <span>↗</span></a></li><li><a href="#">[Social link 02] <span>↗</span></a></li><li><a href="#">[Download CV: file to come] <span>↓</span></a></li></ul></section></div>`}
 function delf(){
  const now=new Date(),t0=new Date(DELF_START+'T00:00:00'),t1=new Date(DELF_TARGET+'T00:00:00');
