@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f7f6;--ink:#161616;--mute:#727272;--line:#cfcfcd;color-scheme:light}
+:root{--rasp:#c8175d;--blue:#2434d6;--bg:#f7f7f6;--ink:#161616;--mute:#727272;--line:#cfcfcd;color-scheme:light}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.6 'Outfit',system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -16,7 +16,8 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .w{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 header{display:flex;justify-content:flex-end;padding:28px 0;font-size:15px}
 header a:last-child,.mute{color:var(--mute)}
-header a:hover{color:var(--ink)}
+header a:hover{color:var(--rasp)}
+::selection{background:var(--rasp);color:#fff}
 h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-serif;font-weight:400;letter-spacing:.012em;line-height:.95;margin:0}
 .big{font-size:clamp(52px,9.5vw,136px)}
 .mid{font-size:clamp(40px,5.6vw,80px)}
@@ -27,11 +28,11 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 .hero figure{margin:0}
 .hero .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px);align-items:end}
 .abpic{margin:48px 0 0;max-width:420px}.abpic img{width:100%;height:auto;display:block;filter:grayscale(1)}
-.bio{background:repeating-linear-gradient(to bottom,transparent 0 calc(1.12em - 1px),var(--line) calc(1.12em - 1px) 1.12em);border-left:1px solid var(--ink);padding-left:clamp(14px,2vw,28px)}
+.bio{background:repeating-linear-gradient(to bottom,transparent 0 calc(1.12em - 1px),var(--line) calc(1.12em - 1px) 1.12em);border-left:3px solid var(--rasp);padding-left:clamp(14px,2vw,28px)}
 .contact{position:relative;overflow:hidden}.contact>*:not(.pat){position:relative;z-index:1}
 .pat{position:absolute;inset:0;z-index:0;font:clamp(34px,5vw,64px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;color:var(--bg);opacity:.09;word-break:break-all;pointer-events:none;user-select:none}
-.mq{overflow:hidden;white-space:nowrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin:0 calc(-1*clamp(20px,4vw,56px))}
-.mq div{display:inline-block;padding:.12em 0;font:clamp(30px,4.5vw,60px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;animation:mq 40s linear infinite}
+.mq{overflow:hidden;white-space:nowrap;border-top:2px solid var(--rasp);border-bottom:2px solid var(--rasp);margin:0 calc(-1*clamp(20px,4vw,56px))}
+.mq div{display:inline-block;padding:.12em 0;color:var(--rasp);font:clamp(30px,4.5vw,60px)/1.1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;animation:mq 40s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.mq div{animation:none}}
 .pic{margin:32px 0 0;max-width:62ch}.pic img{width:100%;height:auto;display:block;filter:grayscale(1)}.pic figcaption{font-size:.8rem;color:var(--mute);margin-top:8px}
@@ -41,7 +42,7 @@ h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-
 .row{display:grid;grid-template-columns:3rem minmax(0,1fr) minmax(0,22rem) 1.5rem;gap:16px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line)}
 .row .t{font-size:clamp(30px,4vw,56px)}
 .row .n,.row .d{color:var(--mute);font-size:15px}
-a.row:hover .t{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+a.row:hover .t{color:var(--rasp);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
 .desk{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,72px);padding:clamp(64px,9vw,120px) 0}
 .desk .row{grid-template-columns:3rem 1fr}
 .desk .row:first-child{border-top:1px solid var(--line)}
@@ -51,8 +52,8 @@ a.row:hover .t{text-decoration:underline;text-decoration-thickness:1px;text-unde
 .cell h2{font-size:clamp(28px,2.8vw,40px);margin:0 0 12px}
 .cell p{margin:0;color:var(--mute);font-size:15px}
 .cell span{font-size:15px;color:var(--mute)}
-.cell:hover{background:var(--ink);color:var(--bg)}
-.cell:hover p,.cell:hover span{color:var(--bg)}
+.cell:hover{background:var(--rasp);color:#fff}
+.cell:hover p,.cell:hover span{color:#fff}
 .back{display:inline-block;margin:8px 0 40px;font-size:15px;color:var(--mute)}
 .back:hover{color:var(--ink)}
 .body p{max-width:62ch;margin:0 0 22px}
@@ -71,27 +72,27 @@ footer{padding:64px 0 40px;font-size:15px;color:var(--mute)}
 .ab li:last-child{border-bottom:0}
 .bio{font:300 clamp(28px,4.4vw,60px)/1.12 'Outfit',sans-serif;letter-spacing:-.03em;max-width:24ch;margin:0 0 clamp(56px,9vw,112px)}
 .bio-w{max-width:none}
-.tri{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:clamp(56px,8vw,96px)}
+.tri{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:clamp(56px,8vw,96px)}
 .tri>div{padding:28px 24px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tri h2{font-size:clamp(30px,3.2vw,44px);margin:0 0 32px}
 .tri ul{list-style:none;margin:0;padding:0}
 .tri li{padding:12px 0;border-top:1px solid var(--line);font-size:16px}
 .more{font-size:14px;color:var(--mute);margin:0 0 8px}
-.contact{background:var(--ink);color:var(--bg);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;padding:clamp(40px,7vw,96px) clamp(20px,4vw,56px);margin:clamp(64px,9vw,112px) calc(-1*clamp(20px,4vw,56px)) 0}
+.contact{background:var(--blue);color:#fff;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;padding:clamp(40px,7vw,96px) clamp(20px,4vw,56px);margin:clamp(64px,9vw,112px) calc(-1*clamp(20px,4vw,56px)) 0}
 .contact .label{color:var(--bg);opacity:.8}
 .contact .sub{margin:.1em 0 0}
 .contact ul{list-style:none;margin:0;padding:0}
 .contact li a{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(128,128,128,.6)}
 .contact li a:hover{opacity:.7}
-.btn{display:inline-block;border:1px solid var(--ink);padding:14px 24px;margin:0 0 40px;font-size:16px}
-.btn:hover{background:var(--ink);color:var(--bg)}
+.btn{display:inline-block;border:1px solid var(--blue);color:var(--blue);padding:14px 24px;margin:0 0 40px;font-size:16px}
+.btn:hover{background:var(--blue);color:#fff}
 .parts{counter-reset:p;list-style:none;margin:40px 0 0;padding:0;max-width:62ch;border-top:1px solid var(--line)}
 .parts li{counter-increment:p;display:grid;grid-template-columns:3rem 1fr;padding:12px 0;border-bottom:1px solid var(--line)}
 .parts li:before{content:counter(p,decimal-leading-zero);color:var(--mute);font-size:14px;padding-top:3px}
 /* DELF page */
 .dhero{position:relative;padding:clamp(48px,10vw,140px) 0 clamp(40px,7vw,88px)}
 .stamp{position:absolute;top:clamp(0px,2vw,24px);right:0;border:2px solid var(--ink);padding:8px 16px;transform:rotate(4deg);font-size:clamp(18px,2.4vw,28px);letter-spacing:.04em}
-.band{background:var(--ink);color:var(--bg);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding:clamp(28px,5vw,56px);margin:0 calc(-1*clamp(20px,4vw,56px))}
+.band{background:var(--rasp);color:#fff;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding:clamp(28px,5vw,56px);margin:0 calc(-1*clamp(20px,4vw,56px))}
 .band .num{font-size:clamp(96px,16vw,220px)}
 .band .u{font-size:15px;margin-left:12px;opacity:.8}
 .band .r{border-left:1px solid rgba(128,128,128,.6);padding-left:clamp(20px,4vw,48px)}
@@ -154,12 +155,7 @@ const ABOUT=[
   'Developed and conducted group and individual tours, and educational events on sound and visual art in English and Russian for adults, teenagers and children\u2019s audiences within the institution and its exhibitions']},
  {h:'My teaching style',p:['I am passionate about working with people of all ages, with a focus on:'],li:[
   'Student-centred learning','Activity-based, interactive lessons','A collaborative approach',
-  'Adaptive teaching for students with special needs','Creating a safe and supportive learning environment'],p2:['I believe these principles are essential for productive learning and strong student engagement.']},
- {h:'Personal interests',p:[
-  'I enjoy visiting museums and chatting about art with friends, children, and anyone who\u2019s interested, especially when it comes to video art, the history of sculpture, and artworks with a sense of humour.',
-  'I love learning new languages, so if anyone would like to teach me some French in exchange for English lessons, feel free to get in touch.',
-  'I am also a devoted digger of musical rarities and a DJ. For the past two years, I\u2019ve been part of Radio Achkhoti, a small passion project created by my friends and fellow sound enthusiasts (you can find our shows on YouTube and SoundCloud).',
-  'Finally, as someone with Armenian roots, I\u2019m a big fan of backgammon.']}
+  'Adaptive teaching for students with special needs','Creating a safe and supportive learning environment'],p2:['I believe these principles are essential for productive learning and strong student engagement.']}
 ];
 const HERO_LINE='[One or two sentences: who you teach and how art, cinema and design shape your lessons.]';
 const INTRO=HERO_LINE;
@@ -219,13 +215,12 @@ function section(id){
  return `${b}<h1 class="big">${x.t}</h1><p class="lead">${x.d}</p>${list(id)}`}
 function about(){
  const ED=['Art History: University of St Andrews & St Petersburg State University (2021)','Cambridge CELTA: International House, Budapest (2023)','IELTS 8.0 (2022), with 9.0 in Listening & Reading'];
- const EX=['Private ESL tutor, January 2019 to present','ESL and Art & Design teacher, Projector School, Tbilisi, 2024–2025','Cultural mediator, GES-2 House of Culture, Moscow'];
- const AR=['Art history, video art and sculpture','Cinema','Teaching English through art','Languages','Music and DJing'];
+ const EX=['Private ESL tutor, January 2019 to present','ESL and Art & Design teacher, Projector School, Tbilisi','Cultural mediator, GES-2 House of Culture, Moscow'];
  const col=(h,a)=>`<div><h2>${h}</h2><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
  return `${back('#english','All things English')}<div class="about"><p class="label">Short biography</p>
  <p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students for individual and group lessons.</p>
  <figure class="abpic"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure>
- <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}${col('Areas of interest',AR)}</div>
+ <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
  ${MQ()}
