@@ -6,12 +6,12 @@
 <title>English for the Artsy-Fartsy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500&family=Oswald:wght@400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{--purple:#561d9c;--rasp:#c8175d;--bg:#f7f7f6;--ink:#161616;--mute:#727272;--line:#cfcfcd;color-scheme:light}
 *{box-sizing:border-box}
 body.home{--rasp:#161616}
-body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.6 'Outfit',system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.6 'Outfit','Inter',system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .w{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
@@ -19,10 +19,10 @@ header{display:flex;justify-content:flex-end;padding:28px 0;font-size:15px}
 header a:last-child,.mute{color:var(--mute)}
 header a:hover{color:var(--rasp)}
 ::selection{background:var(--rasp);color:#fff}
-h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Arial Narrow',Impact,sans-serif;font-weight:400;letter-spacing:.012em;line-height:.95;margin:0}
+h1,h2,.row .t,.cell h2,.num{font-family:'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif;font-weight:400;letter-spacing:.012em;line-height:.95;margin:0}
 .big{font-size:clamp(52px,9.5vw,136px)}
 .mid{font-size:clamp(40px,5.6vw,80px)}
-.sub{font:300 clamp(24px,4vw,56px)/1.05 'Outfit',sans-serif;letter-spacing:-.03em;margin:.2em 0 0}
+.sub{font:300 clamp(24px,4vw,56px)/1.05 'Outfit','Inter',sans-serif;letter-spacing:-.03em;margin:.2em 0 0}
 .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,72px);align-items:end;padding:clamp(40px,9vw,120px) 0 clamp(48px,8vw,96px)}
 .hero p{max-width:34ch;margin:28px 0 0;color:var(--mute)}
 .hero img{width:100%;height:auto;display:block;filter:grayscale(1)}
@@ -74,8 +74,13 @@ footer{padding:64px 0 40px;font-size:15px;color:var(--mute)}
 .ab li{padding:10px 0;border-bottom:1px solid var(--line)}
 .ab li:first-child{padding-top:0}
 .ab li:last-child{border-bottom:0}
-.bio{font:300 clamp(28px,4.4vw,60px)/1.12 'Outfit',sans-serif;letter-spacing:-.03em;max-width:24ch;margin:0 0 clamp(56px,9vw,112px)}
+.bio{font:300 clamp(28px,4.4vw,60px)/1.12 'Outfit','Inter',sans-serif;letter-spacing:-.03em;max-width:24ch;margin:0 0 clamp(56px,9vw,112px)}
 .bio-w{max-width:none}
+.biorow{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,5vw,72px);align-items:start;margin:0 0 clamp(56px,9vw,112px)}
+.biorow .bio{margin:0;max-width:none}
+.biorow .abpic{margin:0;max-width:none}
+.lg{margin-right:24px;color:var(--mute)}.lg button{background:none;border:0;padding:0;font:inherit;color:var(--mute);cursor:pointer}.lg button.on{color:var(--ink)}.lg button:hover{color:var(--rasp)}
+@media (max-width:900px){.biorow{grid-template-columns:1fr}.biorow .abpic{max-width:420px}}
 .tri{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:clamp(56px,8vw,96px)}
 .tri>div{padding:28px 24px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tri h2{font-size:clamp(30px,3.2vw,44px);margin:0 0 32px}
@@ -100,14 +105,14 @@ footer{padding:64px 0 40px;font-size:15px;color:var(--mute)}
 .band .num{font-size:clamp(96px,16vw,220px)}
 .band .u{font-size:15px;margin-left:12px;opacity:.8}
 .band .r{border-left:1px solid rgba(128,128,128,.6);padding-left:clamp(20px,4vw,48px)}
-.band .date{font:400 clamp(36px,5vw,68px)/1 'Bebas Neue','Arial Narrow',sans-serif;letter-spacing:.02em;margin:10px 0}
+.band .date{font:400 clamp(36px,5vw,68px)/1 'Bebas Neue','Oswald','Arial Narrow',sans-serif;letter-spacing:.02em;margin:10px 0}
 .band small{font-size:15px;opacity:.8}
 .board{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,72px);padding:clamp(56px,8vw,112px) 0}
 .board p.s{color:var(--mute);max-width:30ch}
 .chk{display:grid;grid-template-columns:2.4rem 1fr auto;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
 .chk:first-child{border-top:1px solid var(--line)}
 .box{width:2.4rem;height:2.4rem;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:20px}
-.chk .t{font:400 clamp(26px,3vw,40px)/1 'Bebas Neue','Arial Narrow',sans-serif;letter-spacing:.012em}
+.chk .t{font:400 clamp(26px,3vw,40px)/1 'Bebas Neue','Oswald','Arial Narrow',sans-serif;letter-spacing:.012em}
 .chk .st{font-size:14px;color:var(--mute)}
 .log{padding-bottom:clamp(56px,8vw,96px)}
 @media (max-width:900px){.tri,.contact{grid-template-columns:1fr}.ab{grid-template-columns:1fr}.grid,.grid.g3{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:2.2rem 1fr 1.5rem}.row .d{grid-column:2;grid-row:2}.hero,.desk,.board{grid-template-columns:1fr}.band{grid-template-columns:1fr}.band .r{border-left:0;padding-left:0;border-top:1px solid rgba(128,128,128,.6);padding-top:24px}.stamp{position:static;display:inline-block;margin-bottom:24px}}
@@ -117,7 +122,7 @@ footer{padding:64px 0 40px;font-size:15px;color:var(--mute)}
 <body>
 <div class="w">
 <div id="mqtop"></div>
-<header><a href="#s-about">Info</a></header>
+<header id="hd"></header>
 <main id="app"></main>
 <footer>© Daria Khadyshyan</footer>
 </div>
@@ -155,7 +160,8 @@ const ABOUT=[
   'Organising group events focused on learning English through art (book and conversation clubs, art tours, film screenings)']},
  {h:'Teaching style',p:['I am passionate about working with people of all ages, with a focus on:'],li:[
   'Student-centred learning','Activity-based, interactive lessons','A collaborative approach',
-  'Adaptive teaching for students with special needs','Creating a safe and supportive learning environment']}
+  'Adaptive teaching for students with special needs','Creating a safe and supportive learning environment']},
+ {h:'Paperwork',p:['Documents available on request.'],li:['CV [file to be added]','IELTS certificate [file to be added]','CELTA certificate [file to be added]']}
 ];
 const HERO_LINE='[One or two sentences: who you teach and how art, cinema and design shape your lessons.]';
 const INTRO=HERO_LINE;
@@ -197,6 +203,17 @@ const ITEMS=[
 ];
 /* ===== END CONTENT ===== */
 const $=document.getElementById('app');
+const RU={"Info": "Инфо", "Home": "Главная", "All things English": "Всё об английском", "DELF Diaries": "Дневники DELF", "[One or two sentences: who you teach and how art, cinema and design shape your lessons.]": "[Одно-два предложения: кого ты учишь и как искусство, кино и дизайн влияют на твои уроки.]", "Departments": "Разделы", "Language education for professionals and culturally curious people.": "Английский для профессионалов и культурно любознательных людей.", "Tactics for ESL students, tried on myself in French.": "Тактики для изучающих английский, опробованные на себе во французском.", "Anthropological research all day long": "Антропологические исследования целыми днями", "On my desk": "На моём столе", "Lesson Library": "Библиотека уроков", "Complete lessons, interactive boards and FigJam prototypes.": "Готовые уроки, интерактивные доски и прототипы в FigJam.", "Teaching Notes": "Заметки о преподавании", "Short essays and observations on teaching.": "Короткие эссе и наблюдения о преподавании.", "Teaching Materials": "Учебные материалы", "Worksheets, vocabulary sets and downloads.": "Рабочие листы, наборы лексики и файлы для скачивания.", "Subjects": "Темы", "Art, cinema, design, architecture and visual culture.": "Искусство, кино, дизайн, архитектура и визуальная культура.", "Case Studies & Behind the Lesson": "Кейсы: как устроен урок", "How a lesson was designed, tested and revised.": "Как урок придумывали, проверяли и переделывали.", "Student Work & In the Classroom": "Работы студентов и жизнь класса", "[Add only with student permission.]": "[Только с разрешения студента.]", "About": "О себе", "CELTA, IELTS, art history and museum education.": "CELTA, IELTS, история искусства и музейное образование.", "Work with me": "Занятия со мной", "[Editable placeholder: formats, levels, contact.]": "[Заглушка: форматы, уровни, контакты.]", "Production Lab": "Лаборатория письма и речи", "Written and oral drafts, corrections and progress.": "Письменные и устные черновики, исправления и прогресс.", "The Error Archive": "Архив ошибок", "Recurring mistakes and useful discoveries.": "Повторяющиеся ошибки и полезные находки.", "Milestones": "Вехи", "Checkpoints on the road to March 17.": "Контрольные точки на пути к 17 марта.", "Study materials": "Материалы для подготовки", "Books, resources and tools I use to prepare.": "Книги, ресурсы и инструменты, которыми я готовлюсь.", "A research diary / target: 17 March 2027": "Дневник-исследование / цель: 17 марта 2027", "DELF Diaries —": "Дневники DELF —", "the road to March 17": "дорога к 17 марта", "A research diary about discipline, mistakes and the absurdities of exam preparation. Tactics I give my ESL students, tried on myself in French.": "Дневник-исследование о дисциплине, ошибках и абсурде подготовки к экзамену. Приёмы, которые я даю своим ученикам английского, — опробованные на себе, во французском.", "days to go": "дней осталось", "Target date": "Целевая дата", "Daily log": "Ежедневный журнал", "[No entries yet.]": "[Пока нет записей.]", "[No entries yet. Add one to the content list.]": "[Пока нет записей.]", "[Editable sample content]": "[Пример содержимого]", "Grammar lesson materials": "Материалы по грамматике", "Grammar focus": "Грамматика в фокусе", "[Materials coming soon]": "[Материалы скоро появятся]", "Sources and further reading": "Источники и что почитать", "Open": "Открыть", "Open the interactive lesson": "Открыть интерактивный урок", "Open the lesson plan": "Открыть план урока", "Open the interactive module": "Открыть интерактивный модуль", "Launched the website": "Запустила сайт", "Milestone 01": "Веха 01", "26 November 2026": "26 ноября 2026", "26 November 2026 / Milestone 01": "26 ноября 2026 / Веха 01", "The website is live: English lessons and the DELF diary in one place.": "Сайт запущен: уроки английского и дневник DELF в одном месте.", "French / grammar / interactive module": "французский / грамматика / интерактивный модуль", "French / grammar / interactive module / A module on the French connectors that contain « que » and are easy to confuse.": "французский / грамматика / интерактивный модуль / Модуль о французских союзах с « que », которые легко перепутать.", "A small interactive module for those who mix up the French connectors that contain « que ».": "Небольшой интерактивный модуль для тех, кто путает французские союзы со словом « que ».", "Day 1: connecteurs avec « que »": "День 1: connecteurs avec « que »", "26 November 2026 / Making my own interactive module": "26 ноября 2026 / Делаю собственный интерактивный модуль", "Short biography": "Коротко о себе", "Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students for individual and group lessons.": "Дарья Хадышян — искусствовед, преподавательница английского и культурный медиатор. Специализируется на преподавании английского для творческих людей и сейчас набирает новых студентов на индивидуальные и групповые занятия.", "Education": "Образование", "Selected experience": "Избранный опыт", "Art History: University of St Andrews & St Petersburg State University (2021)": "История искусства: Университет Сент-Эндрюс и СПбГУ (2021)", "Cambridge CELTA: International House, Budapest (2023)": "Cambridge CELTA: International House, Будапешт (2023)", "IELTS 8.0 (2022), with 9.0 in Listening & Reading": "IELTS 8.0 (2022), 9.0 за Listening и Reading", "Private ESL tutor, January 2019 to present": "Частный преподаватель английского, с января 2019 года", "ESL and Art & Design teacher, Projector School, Tbilisi": "Преподавательница английского и Art & Design, школа Projector, Тбилиси", "Cultural mediator, GES-2 House of Culture, Moscow": "Культурный медиатор, Дом культуры «ГЭС-2», Москва", "In more detail": "Подробнее", "Teaching experience": "Опыт преподавания", "January 2019 – present / Private ESL tutor": "С января 2019 года / Частный преподаватель английского", "Teaching adults, university applicants and school students": "Преподавание взрослым, абитуриентам и школьникам", "Preparing students for English language exams according to required standards": "Подготовка студентов к экзаменам по английскому в соответствии с требуемыми стандартами", "Training job seekers for interviews in English for international positions": "Подготовка соискателей к собеседованиям на английском на международные позиции", "Teaching practical English for emigration and daily communication abroad": "Практический английский для эмиграции и повседневного общения за границей", "Providing specialised English vocabulary courses for students entering English-taught humanities programs (Art History, Philosophy, Film Studies, Literature)": "Курсы специальной лексики для студентов, поступающих на гуманитарные программы на английском (история искусства, философия, кино, литература)", "Organising group events focused on learning English through art (book and conversation clubs, art tours, film screenings)": "Организация групповых встреч, где английский учат через искусство (книжные и разговорные клубы, арт-туры, кинопоказы)", "Teaching style": "Стиль преподавания", "Paperwork": "Документы", "Documents available on request.": "Документы предоставлю по запросу.", "CV [file to be added]": "Резюме [файл будет добавлен]", "IELTS certificate [file to be added]": "Сертификат IELTS [файл будет добавлен]", "CELTA certificate [file to be added]": "Сертификат CELTA [файл будет добавлен]", "I am passionate about working with people of all ages, with a focus on:": "Я люблю работать с людьми любого возраста, делая акцент на:", "Student-centred learning": "обучении, ориентированном на студента", "Activity-based, interactive lessons": "интерактивных уроках, построенных на деятельности", "A collaborative approach": "совместной работе", "Adaptive teaching for students with special needs": "адаптивном преподавании для студентов с особыми потребностями", "Creating a safe and supportive learning environment": "создании безопасной и поддерживающей среды", "Contact / social / paperwork": "Контакты / соцсети / документы", "Let’s talk": "Давайте поговорим", "about something": "о чём-нибудь", "Apply for individual and group lessons": "Записаться на индивидуальные и групповые занятия", "60 min": "60 мин", "Individual / €35 / 3,500 ₽": "Индивидуально / €35 / 3 500 ₽", "Group / €20 / 2,000 ₽": "Группа / €20 / 2 000 ₽", "Themed speaking club / €15 / 1,500 ₽": "Тематический разговорный клуб / €15 / 1 500 ₽", "Email: khadarshyn@gmail.com": "Почта: khadarshyn@gmail.com", "Personal channel: Very Romantic Collection": "Личный канал: Very Romantic Collection", "ESL channel: Threads @iam_donnakebab": "Канал об английском: Threads @iam_donnakebab"};
+let LANG='en';
+try{LANG=localStorage.getItem('lang')||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'en')}catch(e){LANG=(navigator.language||'').toLowerCase().startsWith('ru')?'ru':'en'}
+const tr=h=>LANG!=='ru'?h:h.replace(/>([^<>]+)</g,(m,t)=>{
+ let k=t.trim(),pre='',suf='';
+ if(k.startsWith('\u2190 ')){pre='\u2190 ';k=k.slice(2)}
+ if(k.endsWith(' \u2197')){suf=' \u2197';k=k.slice(0,-2)}
+ const v=RU[k];return v?'>'+t.replace(pre+k+suf,()=>pre+v+suf)+'<':m});
+const HD=()=>`<span class="lg"><button data-l="en"${LANG==='en'?' class="on"':''}>EN</button> / <button data-l="ru"${LANG==='ru'?' class="on"':''}>RU</button></span><a href="#s-about">Info</a>`;
+document.addEventListener('click',e=>{const b=e.target.closest('.lg button');if(!b)return;LANG=b.dataset.l;try{localStorage.setItem('lang',LANG)}catch(x){}draw()});
+
 const DAY=86400000;
 const row=(n,t,d,h)=>`<a class="row" href="${h}"><span class="n">${n}</span><span class="t">${t}</span><span class="d">${d}</span><span>↗</span></a>`;
 const back=(h,l)=>`<a class="back" href="${h}">← ${l}</a>`;
@@ -224,8 +241,8 @@ function about(){
  const EX=['Private ESL tutor, January 2019 to present','ESL and Art & Design teacher, Projector School, Tbilisi','Cultural mediator, GES-2 House of Culture, Moscow'];
  const col=(h,a)=>`<div><h2>${h}</h2><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
  return `${back('#english','All things English')}<div class="about"><p class="label">Short biography</p>
- <p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students for individual and group lessons.</p>
- <figure class="abpic"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure>
+ <div class="biorow"><p class="bio">Daria Khadyshyan is an art historian, ESL teacher and cultural mediator. She specialises in teaching English to creatives, and is currently accepting new students for individual and group lessons.</p>
+ <figure class="abpic"><img src="${PHOTO2}" alt="Black-and-white photograph of a person in sunglasses at a Paris cafe table"></figure></div>
  <div class="tri">${col('Education',ED)}${col('Selected experience',EX)}</div>
  <p class="more">In more detail</p>
  ${ABOUT.map(b=>`<section class="ab"><div><h2>${b.h}</h2></div><div>${b.m?`<p class="m">${b.m}</p>`:''}${(b.p||[]).map(x=>`<p>${x}</p>`).join('')}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(b.p2||[]).map(x=>`<p style="margin-top:20px">${x}</p>`).join('')}</div></section>`).join('')}
@@ -246,13 +263,15 @@ function item(id){
  const i=ITEMS.find(x=>x.id===id);if(!i)return home();
  const p=i.sec==='desk'?['#','Home']:i.sec==='log'?['#delf','DELF Diaries']:DELF_SECS.some(s=>s.id===i.sec)?['#s-'+i.sec,DELF_SECS.find(s=>s.id===i.sec).t]:['#s-'+i.sec,(SECTIONS.find(s=>s.id===i.sec)||{}).t];
  return `${back(p[0],p[1])}<h1 class="big">${i.title}</h1><p class="lead">${[i.meta,i.tactic].filter(Boolean).join(' / ')}</p>${i.link?`<a class="btn" href="${i.link}" target="_blank" rel="noopener">${i.linkLabel||'Open'} \u2197</a>`:''}${IMG[i.id]?`<figure class="pic"><img src="${IMG[i.id]}" alt="${i.imgAlt||''}"><figcaption>${i.imgCap||''}</figcaption></figure>`:''}<div class="body"${i.lang?` lang="${i.lang}"`:''}>${i.body.map(b=>`<p>${b}</p>`).join('')}</div>${i.sources?`<p class="more" style="margin-top:48px">Sources and further reading</p><div class="list" style="max-width:62ch">${i.sources.map(s=>`<a class="row" style="grid-template-columns:1fr 1.5rem" href="${s.u}" target="_blank" rel="noopener"><span>${s.t}<br><span class="d">${s.o}</span></span><span>\u2197</span></a>`).join('')}</div>`:''}`}
-function route(){
+function draw(){
  const h=location.hash.slice(1);
- $.innerHTML=h==='english'?english():h==='delf'?delf():h.startsWith('s-')?section(h.slice(2)):h.startsWith('i-')?item(h.slice(2)):home();
+ $.innerHTML=tr(h==='english'?english():h==='delf'?delf():h.startsWith('s-')?section(h.slice(2)):h.startsWith('i-')?item(h.slice(2)):home());
+ document.documentElement.lang=LANG;
  document.body.classList.toggle('home',!h);
  document.getElementById('mqtop').innerHTML=MQ();
- window.scrollTo(0,0);
+ document.getElementById('hd').innerHTML=tr(HD());
 }
+function route(){draw();window.scrollTo(0,0)}
 addEventListener('hashchange',route);route();
 </script>
 </body>
