@@ -139,7 +139,8 @@ const SECTIONS=[
 const DELF_SECS=[
  {id:'prod',t:'Production Lab',d:'Written and oral drafts, corrections and progress.'},
  {id:'errors',t:'The Error Archive',d:'Recurring mistakes and useful discoveries.'},
- {id:'miles',t:'Milestones',d:'Checkpoints on the road to March 17.'}
+ {id:'miles',t:'Milestones',d:'Checkpoints on the road to March 17.'},
+ {id:'study',t:'Study materials',d:'Books, resources and tools I use to prepare.'}
 ];
 const DELF_START='2026-11-26';   // day 1 of the diary
 const DELF_TARGET='2027-03-17';  // target date
@@ -232,7 +233,7 @@ function delf(){
  <figure class="dphoto"><img src="${PHOTO3}" alt="Night photograph of the facade of Hotel des Arts in Paris"></figure>
  <section class="band"><div><span class="num">${left}</span><span class="u">days to go</span></div><div class="r"><small>Target date</small><div class="date">${dt}</div></div></section>
  <section class="log"><p class="label">Daily log</p>${log.length?`<div class="list">${log.map((i,k)=>row('J'+pad(k+1,2),i.title,[i.meta,i.tactic,i.sum].filter(Boolean).join(' / '),'#i-'+i.id)).join('')}</div>`:`<div class="empty">[No entries yet.]</div>`}</section>
- <div class="grid g3">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>`}
+ <div class="grid">${DELF_SECS.map((s,k)=>`<a class="cell" href="#s-${s.id}"><div><h2>${s.t}</h2><p>${s.d}</p></div><div class="ph">[Editable sample content]</div></a>`).join('')}</div>`}
 function item(id){
  const i=ITEMS.find(x=>x.id===id);if(!i)return home();
  const p=i.sec==='desk'?['#','Home']:i.sec==='log'?['#delf','DELF Diaries']:DELF_SECS.some(s=>s.id===i.sec)?['#s-'+i.sec,DELF_SECS.find(s=>s.id===i.sec).t]:['#s-'+i.sec,(SECTIONS.find(s=>s.id===i.sec)||{}).t];
